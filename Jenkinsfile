@@ -1,26 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'Building ...'
-          }
-        }
-        stage('added_in_web_ui') {
-          steps {
-            sh 'echo "added_in_web_ui"'
-          }
-        }
-      }
-    }
-    stage('Test') {
+    stage('Minify') {
       steps {
-        echo 'Testing ...'
+        sh 'echo "minified js" > mylib.min.js'
       }
     }
-    stage('Deploy') {
+    stage('Deploy to FTP') {
       steps {
         echo 'Deploying ...'
       }
