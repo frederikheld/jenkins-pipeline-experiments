@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy to FTP') {
       steps {
         echo 'Deploying ...'
-        sh 'git ftp --push ftp://dev.frederikheld.de/deploy/jenkins-pipeline-experiments --username  '
+        sh 'curl -T mylib.min.js ftp://dev.frederikheld.de/deploy/jenkins-pipeline-experiments --user $FTP_USER:$FTP_PW'
       }
     }
   }
