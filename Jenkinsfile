@@ -14,7 +14,7 @@ pipeline {
       steps {
         echo 'Deploying ...'
         withCredentials([usernamePassword(credentialsId: 'credentials-deploy-ftp', usernameVariable: 'FTP_USER', passwordVariable: 'FTP_PW')]) {
-            sh 'curl -T mylib.min.js ftp://dev.frederikheld.de/deploy/jenkins-pipeline-experiments --user $FTP_USER:$FTP_PW'
+            sh 'curl -T mylib.min.js ftp://dev.frederikheld.de/ --user $FTP_USER:$FTP_PW'
         }
       }
     }
