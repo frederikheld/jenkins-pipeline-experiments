@@ -14,7 +14,7 @@ pipeline {
     }
   }
   environment {
-    FTP_USER = 'credentials(\'deploy-ftp\')'
-    FTP_PW = 'credentials(\'deploy-ftp\')'
+    FTP_USER = 'credentials(\'credentials-deploy-ftp\')'
+    FTP_PW = 'credentials(\'credentials-deploy-ftp\')'
   }
 }
